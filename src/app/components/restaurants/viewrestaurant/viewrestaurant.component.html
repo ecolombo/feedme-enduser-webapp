@@ -1,0 +1,19 @@
+<div class="modal-header border-0 d-flex justify-content-between align-items-center">
+    <h4>Restaurant Details</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()">
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="d-flex flex-column mb-1">
+      <span class="text-sm text-muted">Name</span>
+      <p>{{ restaurantInfo?.name }}</p>
+    </div>
+    <div class="d-flex flex-column mb-1">
+      <span class="text-sm text-muted">Description</span>
+      <p class="text-wrap">{{ restaurantInfo?.description || 'Not Provided' }}</p>
+    </div>
+    <div class="d-flex flex-column mb-1">
+      <span class="text-sm text-muted">Added On</span>
+      <p class="text-wrap">{{ restaurantInfo?.addedOn | date: 'dd MMMM yyyy, hh:MM:ss aa' }}</p>
+    </div>
+  </div>
