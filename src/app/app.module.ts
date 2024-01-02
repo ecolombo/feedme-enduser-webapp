@@ -12,13 +12,21 @@ import { RestaurantsModule } from './components/restaurants/restaurants.module';
 
 import { RouterModule } from '@angular/router';
 import { DishesModule } from './components/dishes/dishes.module';
+import { CatbrowserComponent } from './components/catbrowser/catbrowser.component';
+import { RestbrowserComponent } from './components/restbrowser/restbrowser.component';
+import { DishbrowserComponent } from './components/dishbrowser/dishbrowser.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent    
+    NavbarComponent,
+    CatbrowserComponent,
+    RestbrowserComponent,
+    DishbrowserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

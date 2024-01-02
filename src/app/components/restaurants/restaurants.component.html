@@ -5,12 +5,12 @@
                 <div class="card-header bg-white border-0">
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <h4>Restaurants</h4>
+                            <h4>All Restaurants</h4>
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="d-flex justify-content-end align-items-center">
-                              <a type="button" class="btn btn-dark me-1" [routerLink]="['./', 'categories']">Manage Restaurant Categories</a>                            
-                            <button class="btn btn-dark me-1"   (click)="openModal(restaurantModal)">Add Restaurant</button>
+                              <!--<a type="button" class="btn btn-dark me-1" [routerLink]="['./', 'categories']">Manage Restaurant Categories</a>                            
+                            <button class="btn btn-dark me-1"   (click)="openModal(restaurantModal)">Add Restaurant</button>-->
                         </div>
                         </div>
                     </div>
@@ -34,8 +34,8 @@
                                 <td>
                                   <button type="button" class="btn btn-sm btn-dark me-1" (click)="openImageModal(viewImageModal, rest.imageUrls, rest.thumbnailImage)" >View Images</button>
                                   <button type="button" class="btn btn-sm btn-dark me-1" (click)="openViewModal(restaurantViewModal, rest)" >View Details</button>
-                                  <button type="button" class="btn btn-sm btn-dark me-1" (click)="openModal(restaurantModal, rest)" >Update</button>
-                                  <button type="button" class="btn btn-sm btn-danger me-1" (click)="delete(rest?.restaurantId)" >Delete</button>                                  
+                                  <!--<button type="button" class="btn btn-sm btn-dark me-1" (click)="openModal(restaurantModal, rest)" >Update</button>
+                                  <button type="button" class="btn btn-sm btn-danger me-1" (click)="delete(rest?.restaurantId)" >Delete</button>                                  -->
                                 </td>
                               </tr>                       
                         </tbody>

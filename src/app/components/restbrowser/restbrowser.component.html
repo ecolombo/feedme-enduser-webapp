@@ -1,0 +1,74 @@
+<div class="container-fluid mt-2">
+    <div class="row w-100 m-0" *ngIf="fetching">
+      <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <div class="row w-100 m-0 mt-2" *ngIf="!fetching">
+      <div>          
+        <h3 class="m-0 font-weight-bold">
+            Category: {{ categoryName }}
+        </h3>
+        <p>
+    </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let rest of restaurants">
+        <div class="card shadow-sm" style="height: 100%;">
+          <a class="nav-link active" aria-current="page" routerLink="/browse/dishesByRestaurant/{{rest?.restaurantId}}"  routerLinkActive>
+            <img [src]="rest?.imageUrls[rest?.thumbnailImage]" alt="" class="card-img-top img mt-2">
+          </a>
+          <div class="card-body">
+            <h5 class="m-0 font-weight-bold card-title">
+              <a class="nav-link active" aria-current="page" routerLink="/browse/dishesByRestaurant/{{rest?.restaurantId}}"  routerLinkActive>
+              {{ rest?.name }}
+            </a>
+            </h5>
+            <p class="card-text text-limit">
+                Category: {{ rest?.restaurantCategory?.name }}
+              </p>  
+            <p class="card-text text-limit">
+              {{ rest?.description }}
+            </p>
+          </div>
+          <div class="card-footer bg-white border-0">
+            <div class="d-flex justify-content-evenly align-items-center">
+                <button type="button" class="btn btn-sm btn-dark" (click)="openImageModal(viewImageModal, rest?.imageUrls, rest?.thumbnailImage)" >View Images</button>
+                <button type="button" class="btn btn-sm btn-dark" [routerLink]="['/browse/dishesByRestaurant/'+rest?.restaurantId]">View Dishes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <ng-template  #viewImageModal let-modal>
+    <div class="modal-header border-0 d-flex justify-content-between align-items-center">
+        <h3>Images</h3>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()">
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12 col-sm-2 px-0 border-right verticalScroll">
+            <ul class="list-group list-group-flush">
+              <li class="list-hover list-group-item" *ngFor="let imgSrc of tempImageFiles; index as idx"
+                (click)="selectedImageIdx = idx">
+                <div class="position-absolute mt-2" *ngIf="thumbnailImageIdx === idx">
+                  <h4 class="badge rounded-pill bg-secondary">Thumbnail Image</h4>
+                </div>
+                <img [src]="imgSrc" [alt]="imgSrc" class="img-fluid rounded shadow-sm" height="64px" loading="lazy">
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-10">
+            <div class="sticky-top">
+              <img [src]="tempImageFiles[selectedImageIdx]" [alt]="tempImageFiles[selectedImageIdx]"
+                class="img-fluid shadow-sm img-style" loading="lazy" title="View Full Image">
+            </div>
+          </div>
+        </div>
+      </div>
+</ng-template>

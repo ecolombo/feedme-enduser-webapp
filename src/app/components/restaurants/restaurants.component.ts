@@ -41,7 +41,7 @@ export class RestaurantsComponent implements OnInit {
     this.restaurantInfo = restaurantObj;
   }
   
-  // view image model
+  // view image modal
   openImageModal(modal: any, imageUrls: string[], thumbnailImageIdx: number) {
     console.log(imageUrls);
     this.tempImageFiles = [...imageUrls];

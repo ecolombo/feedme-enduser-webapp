@@ -1,6 +1,6 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">Feedme Restaurant Manager</a>
+      <a class="navbar-brand" routerLink="/">Feedme Restaurant Platform</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -8,8 +8,8 @@
 
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" routerLink=""  routerLinkActive >Dashboard</a>
+          <li class="nav-item"  *ngIf="authService.isLoggedIn()">
+            <a class="nav-link" aria-current="page" routerLink="/browse/categories"  routerLinkActive >Browse</a>
           </li>
         
 
@@ -17,15 +17,23 @@
 
           <li class="nav-item" *ngIf="authService.isLoggedIn()">
             <a class="nav-link" routerLink="/restaurants" role="button" data-bs-toggle="dropdown" aria-expanded="false"  routerLinkActive>
-              Restaurants
+              All Restaurants
             </a>
           </li>
 
           <li class="nav-item" *ngIf="authService.isLoggedIn()">
             <a class="nav-link" routerLink="/dishes" role="button" data-bs-toggle="dropdown" aria-expanded="false"  routerLinkActive>
-              Dishes
+              All Dishes
             </a>
           </li>
+
+          <ul class="dropdown-menu" aria-labelledby="Categories" *ngIf="authService.isLoggedIn()">
+            <li><a class="dropdown-item" routerLink="/auth/user-profile">My Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/my-orders">My Orders</a></li>
+            <li><a class="dropdown-item" routerLink="/auth/change-password">Change Password</a></li>
+            <li><a class="dropdown-item" routerLink="/change-password">Setting</a></li>
+            <li><a class="dropdown-item" routerLink="/products/view">Help us</a></li>
+        </ul>
 
   
         

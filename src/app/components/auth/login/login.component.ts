@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('x-auth-token', JSON.stringify(response?.data?.authToken));
         localStorage.setItem('x-admin-id', JSON.stringify(response?.data?.adminId));
         localStorage.setItem('x-admin-name', JSON.stringify(response?.data?.fullName));
-        this.router.navigateByUrl("/restaurants");
+        this.router.navigateByUrl("/browse/categories");
       },error =>{
         this.errorReponse = error.error.message;
       })

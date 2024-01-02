@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="p-3 mb-2 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Feedme Restaurant Platform </h1>
+        <p class="col-md-8 fs-4">
+          All Restaurants in One Place
+        </p>
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Start Browsing</h2>
+          <p>Currently registered restaurant categories: {{nrCat}}</p>
+          <p>Currently registered restaurants: {{nrRest}}</p>
+          <p>Currently registered dishes: {{nrDishes}}</p>
+          <button class="btn btn-outline-light mt-1" type="button" [routerLink]="['/browse/categories']">Browse Restaurants</button>
+        </div>
+      </div>
+    </div>
+  </div>
