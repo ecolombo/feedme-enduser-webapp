@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiBaseUrl :'http://localhost:8088/feedme-webservice/api'
+    apiBaseUrl :'http://localhost:9991/feedme-webservice/api'
 };

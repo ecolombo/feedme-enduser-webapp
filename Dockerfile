@@ -10,4 +10,4 @@ RUN npm run build --production
 FROM nginx:latest AS ngi
 COPY ./nginx.conf  /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist/feedme-enduser-webapp/ /usr/share/nginx/html
-EXPOSE 80
+EXPOSE 81
